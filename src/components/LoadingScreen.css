@@ -1,0 +1,232 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loading-screen.fade-out {
+  pointer-events: none;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.loading-image-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-image-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  position: relative;
+  z-index: 10;
+  background: var(--dark-secondary);
+  margin: 0 auto;
+}
+
+.loading-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.loading-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.loading-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.loading-ring.ring-1 {
+  width: 180px;
+  height: 180px;
+  border: 3px solid transparent;
+  border-top-color: var(--primary);
+  border-right-color: var(--primary);
+  animation: spin-ring 2s linear infinite;
+  z-index: 1;
+}
+
+.loading-ring.ring-2 {
+  width: 200px;
+  height: 200px;
+  border: 3px solid transparent;
+  border-bottom-color: var(--accent);
+  border-left-color: var(--accent);
+  animation: spin-ring 2.5s linear infinite reverse;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.loading-ring.ring-3 {
+  width: 160px;
+  height: 160px;
+  border: 3px solid transparent;
+  border-top-color: var(--secondary);
+  border-bottom-color: var(--secondary);
+  animation: spin-ring 1.5s linear infinite;
+  opacity: 0.6;
+  z-index: 3;
+}
+
+@keyframes spin-ring {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.loading-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.loading-text p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.loading-progress {
+  width: 300px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.loading-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: rgba(30, 41, 59, 0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.code-line {
+  margin: 0.3rem 0;
+}
+
+.code-line.indent {
+  padding-left: 1.5rem;
+}
+
+.code-keyword {
+  color: #c792ea;
+}
+
+.code-variable {
+  color: #82aaff;
+}
+
+.code-property {
+  color: #7fdbca;
+}
+
+.code-string {
+  color: #c3e88d;
+}
+
+.code-number {
+  color: #f78c6c;
+}
+
+@media (max-width: 768px) {
+  .loading-image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .loading-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .loading-ring {
+    width: 140px;
+    height: 140px;
+  }
+
+  .loading-ring.ring-2 {
+    width: 160px;
+    height: 160px;
+  }
+
+  .loading-ring.ring-3 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .loading-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .loading-progress {
+    width: 250px;
+  }
+
+  .loading-code {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+}
+

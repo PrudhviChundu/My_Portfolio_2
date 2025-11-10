@@ -1,0 +1,43 @@
+/* Mobile Performance Optimizations */
+
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Optimize transforms for mobile */
+  .skill-card,
+  .glass-card,
+  .exp-card {
+    transform-style: flat;
+  }
+  
+  /* Reduce will-change usage on mobile */
+  .morphing-blob {
+    will-change: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further optimizations for small screens */
+  .particle-system {
+    opacity: 0.4;
+  }
+  
+  .developer-background {
+    opacity: 0.7;
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

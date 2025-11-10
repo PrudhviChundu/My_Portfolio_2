@@ -1,0 +1,56 @@
+.scroll-spin-wrapper {
+  position: relative;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.spin-ring-ring-1,
+.spin-ring-ring-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.spin-ring-ring-1 {
+  width: 380px;
+  height: 380px;
+  border-top-color: var(--primary);
+  border-right-color: var(--primary);
+  animation: spin-ring-slow 8s linear infinite;
+  opacity: 0.6;
+}
+
+.spin-ring-ring-2 {
+  width: 400px;
+  height: 400px;
+  border-bottom-color: var(--accent);
+  border-left-color: var(--accent);
+  animation: spin-ring-slow 10s linear infinite reverse;
+  opacity: 0.4;
+}
+
+@keyframes spin-ring-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .spin-ring-ring-1 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .spin-ring-ring-2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
