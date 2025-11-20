@@ -3,7 +3,7 @@ import { HiCalendar, HiCode } from 'react-icons/hi'
 
 // General Icons
 import { FaDatabase, FaDocker } from 'react-icons/fa'
-import { DiOracle } from 'react-icons/di'
+//import { DiOracle } from 'react-icons/di'
 
 // DevOps, Cloud & Tools Icons
 import {
@@ -208,7 +208,7 @@ const Experience = () => {
     AWS: <SiAmazonaws />,
     Azure: <SiMicrosoftazure />,
     Excel: <SiMicrosoftexcel />,
-    'PL/SQL': <DiOracle />,
+    //'PL/SQL': <DiOracle />,
   }
 
   const getTechIcons = (tech) => tech.map((t) => iconMap[t] || <HiCode />)
