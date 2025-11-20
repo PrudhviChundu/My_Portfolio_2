@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaMusic, FaGuitar, FaPlane, FaFutbol } from 'react-icons/fa'
+import { FaMusic, FaPlane, FaFutbol } from 'react-icons/fa'
 import './Hobbies.css'
 
 const Hobbies = () => {
@@ -13,11 +13,6 @@ const Hobbies = () => {
       icon: <FaMusic />,
       title: 'Music',
       description: 'Listening to music',
-    },
-    {
-      icon: <FaGuitar />,
-      title: 'Guitar',
-      description: 'Learning Guitar',
     },
     {
       icon: <FaPlane />,
