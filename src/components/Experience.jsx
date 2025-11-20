@@ -1,16 +1,37 @@
 import { motion } from 'framer-motion'
-import { HiCalendar, HiLocationMarker, HiCode, HiLightBulb } from 'react-icons/hi'
-import { FaJava, FaReact, FaAngular, FaNodeJs, FaDatabase } from 'react-icons/fa'
-import { SiSpringboot, SiMongodb, SiElasticsearch, SiNodedotjs } from 'react-icons/si'
+import { HiCalendar, HiCode } from 'react-icons/hi'
+
+// General Icons
+import { FaDatabase, FaDocker } from 'react-icons/fa'
+import { DiOracle } from 'react-icons/di'
+
+// DevOps, Cloud & Tools Icons
+import {
+  SiLinux,
+  SiBash,
+  SiGitlab,
+  SiJenkins,
+  SiKubernetes,
+  SiPython,
+  SiAnsible,
+  SiTerraform,
+  SiPrometheus,
+  SiGrafana,
+  SiAmazonaws,
+  SiMicrosoftazure,
+  SiMicrosoftexcel,
+} from 'react-icons/si'
+
 import './Experience.css'
 
 const Experience = () => {
   const timelineEvents = [
+    // 1️⃣ Data Analyst — Telefonica Spain
     {
-      date: 'Dec 2021 - dec 2022',
+      date: 'Dec 2021 - Dec 2022',
       company: 'Netcracker Technologies',
       location: 'Hyderabad, India',
-      title: 'Data Analyst  -  Telefonica Spain  -  Started Journey',
+      title: 'Data Analyst - Telefonica Spain - Started Journey',
       type: 'project',
       tech: ['SQL', 'Linux'],
       description: 'Began my professional journey at Netcracker',
@@ -19,98 +40,179 @@ const Experience = () => {
         'Debugged complex data validation and integration errors, applying quick fixes to minimize service impact',
         'Coordinated with support, development, and operations teams to resolve production issues under stringent SLAs',
       ],
-      icon: <FaJava />,
-      color: '#f89820',
-    },
-    {
-      date: 'Dec 2022 - Jan 2024',
-      company: 'Netcracker technologies - Automations',
-      location: 'Hyderabad, India',
-      title: 'DevOps Engineer  -  Network Domain Orchestration (NDO)',
-      type: 'project',
-      tech: ['Gitlab', 'Jenkins', 'CI/CD', 'Docker & Kubernetes', 'Python & Shell', 'Yaml/Ansible','Terraform', 'Linux', 'Monitoring & Logging', 'AWS & Azure'],
-      description: 'cloud-native microservices-based orchestration platform',
-      achievements: [
-        'Kubernetes Management: Managed large-scale EKS and AKS clusters, improving uptime to 99.9% using horizontal pod autoscaling (HPA), node taints/tolerations, and resource optimization',
-        'Microservices Deployment Automation: Designed Helm-based Kubernetes manifests (YAML) to deploy over 50+ microservices, reducing configuration drift and maintaining environment consistency.',
-        'Infrastructure as Code (IaC): Automated provisioning of network, compute, and storage resources using Terraform modules, enabling repeatable, version-controlled deployments',
-        'GitLab CI/CD Pipelines: build, test, scan, deploy',
-        'Automation using Python & Shell: Built scripts for deployment validation, log parsing, backup automation, and post-deployment health checks, reducing manual verification efforts by 40%',
-      ],
-      icon: <SiMongodb />,
-      color: '#dd0031',
+      icon: (
+        <div style={{ display: 'flex', gap: '6px' }}>
+          <FaDatabase />
+          <SiLinux />
+        </div>
+      ),
+      color: '#1e88e5',
     },
 
+    // 2️⃣ DevOps Engineer — NDO
     {
-      date: 'jan 2024 - Jan 2025 (50%)',
-      company: 'Netcracker Technologies',
+      date: 'Dec 2022 - Jan 2024',
+      company: 'Netcracker Technologies - Automations',
       location: 'Hyderabad, India',
-      title: 'SQL Developer  -  COGECO',
+      title: 'DevOps Engineer - Network Domain Orchestration (NDO)',
       type: 'project',
-      tech: ['Linux', 'Excel', 'SQL', 'PL/SQL', 'Shell Scripting'],
-      description: 'managing millions of customer records across RBM (Rating & Billing Manager) and TOMS (Telecom Operations Management System) databases',
-      achievements: [
-        'Wrote optimized PL/SQL procedures, functions, and triggers for automated billing, usage rating, and validation',
-        'Implemented billing automation scripts to generate monthly invoices, reducing manual workload by 60%',
-        'Created data reconciliation jobs between RBM and TOMS systems to ensure billing accuracy and eliminate mismatches',
-        'Automated data extraction and report generation through SQL Agent and cron jobs, improving report delivery timelines',
-        'Applied hotfix patches in production environments with zero downtime, ensuring uninterrupted customer billing operations',
-        'Continuously learning and implementing new technologies',
+      tech: [
+        'GitLab',
+        'Jenkins',
+        'Docker',
+        'Kubernetes',
+        'Python',
+        'Shell',
+        'Ansible',
+        'Terraform',
+        'Linux',
+        'Prometheus',
+        'Grafana',
+        'AWS',
+        'Azure',
       ],
-      icon: <FaDatabase />,
-      color: '#6db33f',
+      description: 'Cloud-native microservices-based orchestration platform',
+      achievements: [
+        'Managed EKS and AKS clusters ensuring 99.9% uptime using HPA and resource optimization',
+        'Automated deployment of 50+ microservices using Helm and YAML configurations',
+        'Provisioned consistent cloud infra using Terraform modules',
+        'Designed GitLab CI/CD pipelines covering build → test → scan → deploy',
+        'Automated validation, log processing, and health checks using Python & Shell scripts',
+      ],
+      icon: (
+        <div style={{ display: 'flex', gap: '6px' }}>
+          <SiKubernetes />
+          <FaDocker />
+          <SiLinux />
+        </div>
+      ),
+      color: '#0d47a1',
     },
+
+    // 3️⃣ SQL Developer — COGECO
     {
       date: 'Jan 2024 - Jan 2025 (50%)',
-      company: 'Netcracker technologies - Automations',
+      company: 'Netcracker Technologies',
       location: 'Hyderabad, India',
-      title: 'DevOps Engineer  -  Network Domain Orchestration (NDO)',
+      title: 'SQL Developer - COGECO',
       type: 'project',
-      tech: ['Gitlab', 'Jenkins', 'CI/CD', 'Docker & Kubernetes', 'Python & Shell', 'Yaml/Ansible','Terraform', 'Linux', 'Monitoring & Logging', 'AWS & Azure'],
-      description: 'cloud-native microservices-based orchestration platform',
+      tech: ['Linux', 'Excel', 'SQL', 'PL/SQL', 'Shell'],
+      description:
+        'Managed millions of telecom customer records across RBM and TOMS billing systems',
       achievements: [
-        'Kubernetes Management: Managed large-scale EKS and AKS clusters, improving uptime to 99.9% using horizontal pod autoscaling (HPA), node taints/tolerations, and resource optimization',
-        'Microservices Deployment Automation: Designed Helm-based Kubernetes manifests (YAML) to deploy over 50+ microservices, reducing configuration drift and maintaining environment consistency.',
-        'Infrastructure as Code (IaC): Automated provisioning of network, compute, and storage resources using Terraform modules, enabling repeatable, version-controlled deployments',
-        'GitLab CI/CD Pipelines: build, test, scan, deploy',
-        'Automation using Python & Shell: Built scripts for deployment validation, log parsing, backup automation, and post-deployment health checks, reducing manual verification efforts by 40%',
+        'Developed optimized PL/SQL procedures, functions, and triggers for automated billing workflows',
+        'Created invoice automation scripts reducing manual workload by 60%',
+        'Implemented reconciliation jobs ensuring billing accuracy between RBM and TOMS',
+        'Automated reporting using cron and SQL extract jobs',
+        'Applied production hotfixes with zero downtime',
       ],
-      icon: <SiMongodb />,
-      color: '#dd0031',
+      icon: (
+        <div style={{ display: 'flex', gap: '6px' }}>
+          <SiMicrosoftexcel />
+          <FaDatabase />
+          <SiLinux />
+        </div>
+      ),
+      color: '#2e7d32',
     },
+
+    // 4️⃣ DevOps Engineer (50%) — NDO
+    {
+      date: 'Jan 2024 - Jan 2025 (50%)',
+      company: 'Netcracker Technologies - Automations',
+      location: 'Hyderabad, India',
+      title: 'DevOps Engineer - Network Domain Orchestration (NDO)',
+      type: 'project',
+      tech: [
+        'GitLab',
+        'Jenkins',
+        'Docker',
+        'Kubernetes',
+        'Python',
+        'Shell',
+        'Ansible',
+        'Terraform',
+        'Linux',
+        'Prometheus',
+        'Grafana',
+        'AWS',
+        'Azure',
+      ],
+      description: 'Cloud-native orchestration & automation platform',
+      achievements: [
+        'Worked on microservice deployments, YAML enhancements and cluster upgrades',
+        'Developed and optimized Helm templates for environment consistency',
+        'Built 40% faster deployment validation scripts using Python & Shell',
+      ],
+      icon: (
+        <div style={{ display: 'flex', gap: '6px' }}>
+          <SiKubernetes />
+          <FaDocker />
+          <SiLinux />
+        </div>
+      ),
+      color: '#01579b',
+    },
+
+    // 5️⃣ DevOps Engineer — Present
     {
       date: 'Jan 2025 - Present',
-      company: 'Netcracker technologies - Automations',
+      company: 'Netcracker Technologies - Automations',
       location: 'Hyderabad, India',
-      title: 'DevOps Engineer  -  Network Domain Orchestration (NDO)',
+      title: 'DevOps Engineer - Network Domain Orchestration (NDO)',
       type: 'project',
-      tech: ['Gitlab', 'Jenkins', 'CI/CD', 'Docker & Kubernetes', 'Python & Shell', 'Yaml/Ansible','Terraform', 'Linux', 'Monitoring & Logging', 'AWS & Azure'],
-      description: 'cloud-native microservices-based orchestration platform',
-      achievements: [
-        'Kubernetes Management: Managed large-scale EKS and AKS clusters, improving uptime to 99.9% using horizontal pod autoscaling (HPA), node taints/tolerations, and resource optimization',
-        'Microservices Deployment Automation: Designed Helm-based Kubernetes manifests (YAML) to deploy over 50+ microservices, reducing configuration drift and maintaining environment consistency.',
-        'Infrastructure as Code (IaC): Automated provisioning of network, compute, and storage resources using Terraform modules, enabling repeatable, version-controlled deployments',
-        'GitLab CI/CD Pipelines: build, test, scan, deploy',
-        'Automation using Python & Shell: Built scripts for deployment validation, log parsing, backup automation, and post-deployment health checks, reducing manual verification efforts by 40%',
+      tech: [
+        'GitLab',
+        'Jenkins',
+        'Docker',
+        'Kubernetes',
+        'Python',
+        'Shell',
+        'Ansible',
+        'Terraform',
+        'Linux',
+        'Prometheus',
+        'Grafana',
+        'AWS',
+        'Azure',
       ],
-      icon: <SiMongodb />,
-      color: '#dd0031',
+      description: 'End-to-end CI/CD, infra automation & Kubernetes operations',
+      achievements: [
+        'Maintaining high-availability EKS/AKS clusters with security best practices',
+        'Terraform-based provisioning improving infra reliability',
+        'Managing pipelines for multi-service deployments across environments',
+      ],
+      icon: (
+        <div style={{ display: 'flex', gap: '6px' }}>
+          <SiKubernetes />
+          <FaDocker />
+          <SiLinux />
+        </div>
+      ),
+      color: '#0d47a1',
     },
   ]
 
-  const getTechIcons = (tech) => {
-    const iconMap = {
-      'Java': <FaJava />,
-      'Spring Boot': <SiSpringboot />,
-      'React': <FaReact />,
-      'Angular': <FaAngular />,
-      'Node.js': <SiNodedotjs />,
-      'MongoDB': <SiMongodb />,
-      'Elasticsearch': <SiElasticsearch />,
-      'SQL': <FaDatabase />,
-    }
-    return tech.map(t => iconMap[t] || <HiCode />)
+  const iconMap = {
+    SQL: <FaDatabase />,
+    Linux: <SiLinux />,
+    Docker: <FaDocker />,
+    Kubernetes: <SiKubernetes />,
+    GitLab: <SiGitlab />,
+    Jenkins: <SiJenkins />,
+    Python: <SiPython />,
+    Shell: <SiBash />,
+    Ansible: <SiAnsible />,
+    Terraform: <SiTerraform />,
+    Prometheus: <SiPrometheus />,
+    Grafana: <SiGrafana />,
+    AWS: <SiAmazonaws />,
+    Azure: <SiMicrosoftazure />,
+    Excel: <SiMicrosoftexcel />,
+    'PL/SQL': <DiOracle />,
   }
+
+  const getTechIcons = (tech) => tech.map((t) => iconMap[t] || <HiCode />)
 
   return (
     <section id="experience" className="experience">
@@ -147,19 +249,18 @@ const Experience = () => {
                   </div>
                   <div className="marker-pulse" style={{ borderColor: event.color }}></div>
                 </div>
+
                 <div className="timeline-content">
                   <div className="exp-card">
                     <div className="exp-date-badge">
                       <HiCalendar className="date-icon" />
                       <span>{event.date}</span>
                     </div>
-                    <div className="exp-header">
-                      <div>
-                        <h3 className="exp-title">{event.title}</h3>
-                        <h4 className="exp-company">{event.company}</h4>
-                        <p className="exp-description">{event.description}</p>
-                      </div>
-                    </div>
+
+                    <h3 className="exp-title">{event.title}</h3>
+                    <h4 className="exp-company">{event.company}</h4>
+                    <p className="exp-description">{event.description}</p>
+
                     <div className="exp-tech-stack">
                       <span className="tech-label">Tech Stack:</span>
                       <div className="tech-icons">
@@ -170,6 +271,7 @@ const Experience = () => {
                         ))}
                       </div>
                     </div>
+
                     <ul className="exp-achievements">
                       {event.achievements.map((achievement, idx) => (
                         <motion.li
