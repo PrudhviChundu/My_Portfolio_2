@@ -8,7 +8,6 @@ import { DiOracle } from 'react-icons/di'
 // DevOps, Cloud & Tools Icons
 import {
   SiLinux,
-  SiBash,
   SiGitlab,
   SiJenkins,
   SiKubernetes,
@@ -201,7 +200,7 @@ const Experience = () => {
     GitLab: <SiGitlab />,
     Jenkins: <SiJenkins />,
     Python: <SiPython />,
-    Shell: <SiBash />,
+    Shell: <SiLinux />,
     Ansible: <SiAnsible />,
     Terraform: <SiTerraform />,
     Prometheus: <SiPrometheus />,
